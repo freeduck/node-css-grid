@@ -9,6 +9,6 @@ var argv = require('optimist')
     .argv;
 
 var optimizer = new require('../lib/index').createOptimizer();
-console.warn(optimizer.getOptimalColumnNumbers(argv.width, argv.gutter));
+console.log(optimizer.getOptimalColumnNumbers(argv.width, argv.gutter));
 
 
