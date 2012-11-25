@@ -15,5 +15,5 @@ var argv = require('optimist')
     .argv;
 
 var generator = new css_grid.Generator;
-console.warn(generator.build(argv.width, argv.gutter, argv.columns, argv.grid_name));
+console.log(generator.build(argv.width, argv.gutter, argv.columns, argv.grid_name));
 
