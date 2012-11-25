@@ -8,7 +8,7 @@ var argv = require('optimist')
     .describe('g', 'Gutter/line Thickness')
     .argv;
 
-var optimizer = new require('../lib/index').createOptimizer();
+var optimizer = new (require('../lib/index')).Optimizer;
 console.log(optimizer.getOptimalColumnNumbers(argv.width, argv.gutter));
 
 

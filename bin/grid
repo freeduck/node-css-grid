@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+var css_grid = require('../lib/index');
+var argv = require('optimist')
+    .demand(['width', 'gutter', 'columns'])
+    .usage('Usage: $0 -width [num] -gutter [num] -columns [num] -grid-name [string]')
+    .alias('w', 'width')
+    .alias('g', 'gutter')
+    .alias('c', 'columns')
+    .alias('n', 'grid_name')
+    .describe('w', 'Total width of the grid')
+    .describe('g', 'Gutter/line Thickness')
+    .describe('c', 'Number of columns')
+    .describe('n', 'Grid css class name')
+    .default('n', css_grid.DEFAULT_CSS_CLASS)
+    .argv;
+
+var generator = new css_grid.Generator;
+console.warn(generator.build(argv.width, argv.gutter, argv.columns, argv.grid_name));
+
