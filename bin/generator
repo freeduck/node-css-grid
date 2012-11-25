@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var width = 1024;
+var numberOfColumns = 24;
+var gutter = 2;
+for(numberOfColumns = 2;numberOfColumns < 1024;numberOfColumns++){
+    var totalColumnWidth = (width - ((numberOfColumns - 1) * gutter));
+    if(totalColumnWidth % numberOfColumns != 0){
+	continue;
+    }
+    var columnWidth =  totalColumnWidth / numberOfColumns;
+    console.warn(columnWidth)
+}

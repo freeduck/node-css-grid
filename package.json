@@ -1,0 +1,37 @@
+{
+  "name": "css-grid",
+  "version": "0.0.1",
+  "description": "Generate css grids. Calculate cell and row size based on total with of the grid and the gutter. Find optimal cellnumber.",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test",
+    "bin": "bin",
+    "example": "example"
+  },
+  "dependencies": {
+    "optimist": "~0.3.5"
+  },
+  "scripts": {
+    "test": "tap ./test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeduck/node-css-grid.git"
+  },
+  "keywords": [
+    "grid",
+    "css"
+  ],
+  "author": {
+    "name": "Kristian Nygaard Jensen",
+    "email": "freeduck@member.fsf.org",
+    "url": "http://freeduck.dk"
+  },
+  "license": "GPL",
+  "engine": {
+    "node": ">=0.6"
+  },
+  "readmeFilename": "README.md",
+  "_id": "css-grid@0.3.5"
+}
