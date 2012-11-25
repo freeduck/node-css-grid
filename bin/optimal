@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+var argv = require('optimist')
+    .demand(['width', 'gutter'])
+    .usage('Usage: $0 -width [num] -gutter [num]')
+    .alias('w', 'width')
+    .alias('g', 'gutter')
+    .describe('w', 'Total width of the grid')
+    .describe('g', 'Gutter/line Thickness')
+    .argv;
+
+var optimizer = new require('../lib/index').createOptimizer();
+console.warn(optimizer.getOptimalColumnNumbers(argv.width, argv.gutter));
+
+
