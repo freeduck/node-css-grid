@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+var css_grid = require('../lib/index');
+var argv = require('optimist')
+    .demand(['row-height'])
+    .alias('r', 'row-height')
+    .alias('l', 'line-height')
+    .alias('c', 'row-count')
+    .alias('n', 'grid-name')
+    .describe('r', 'The height of the rows in pixels')
+    .describe('l', 'Line height in pixels')
+    .describe('c', 'Number of rows')
+    .describe('n', 'Grid css class name')
+    .default('l', 1)
+    .default('c', 250)
+    .default('n', css_grid.DEFAULT_CSS_CLASS)
+    .argv;
+
+css_grid.generate_rows(argv['row-height'], argv['line-height'], argv['row-count'], argv['grid-name'], function(err, css){
+    if(err){
+	css_grid.handle_error(err);
+	return;
+    }
+    console.log(css);
+});
+
